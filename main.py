@@ -74,7 +74,8 @@ for house in homes:
         # print("A00 Missing")
         start = current_house[current_house["ACTIVITYCODE"] == "C05"]
         # pass
-    elif co.empty:
+
+    if co.empty:
         # print("END SKIP")
         pass
     else:
@@ -102,10 +103,15 @@ for house in homes:
             "LOANTIME": loan_time,
             "YEAR": pd.to_datetime(start_date).year
         }
-        print(house_data)
+        # print(house_data)
 
         houses_df = houses_df.append(house_data, ignore_index=True)
 
+houses_df = houses_df.dropna(
+    subset=[
+        # "VENDORNUMBER",
+        "CONSTRUCTIONTIME", "YEAR"])
+print(houses_df)
 houses_df = houses_df.join(
     start_matrix.set_index('Job #'), on="HOUSENUMBER")
 houses_df = houses_df.join(zip_codes.set_index('DEVELOPMENT'), on="DEV")

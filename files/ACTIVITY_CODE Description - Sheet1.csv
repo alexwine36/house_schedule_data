@@ -66,7 +66,7 @@ G55,Roofing - TPO,Roofing,FALSE,FALSE
 G57,Request Yardlines,Ext. Electrical,FALSE,FALSE
 G60,Taexx Install,Pest,FALSE,FALSE
 G63,Lath,Stucco,FALSE,FALSE
-G65,Foam Pack,,FALSE,FALSE
+G65,Foam Pack,Insulation,FALSE,FALSE
 G66,Duct Blast,HVAC,FALSE,FALSE
 G69,Frame Walk,General,FALSE,FALSE
 G72,Frame Inspection,Frame Labor,TRUE,FALSE
