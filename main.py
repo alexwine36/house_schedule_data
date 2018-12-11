@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from uszipcode import SearchEngine
+import datetime
 
 search = SearchEngine(simple_zipcode=True)
 
@@ -111,20 +112,45 @@ houses_df = houses_df.dropna(
     subset=[
         # "VENDORNUMBER",
         "CONSTRUCTIONTIME", "YEAR"])
-print(houses_df)
+# print(houses_df)
 houses_df = houses_df.join(
     start_matrix.set_index('Job #'), on="HOUSENUMBER")
 houses_df = houses_df.join(zip_codes.set_index('DEVELOPMENT'), on="DEV")
 houses_df.to_csv('./files/compiled_houses.csv', index=False)
 
 
-# print(current_house)
-# print(start)
+# VENDOR ACTIVE JOB COUNT
+# house_schedules["YEAR"] = pd.DatetimeIndex(
+#     house_schedules["ACTUALSTARTDATE"]).year
+# house_schedules["MONTH"] = pd.DatetimeIndex(
+#     house_schedules["ACTUALSTARTDATE"]).month
+# house_schedules["WEEK"] = pd.DatetimeIndex(
+#     house_schedules["ACTUALSTARTDATE"]).week
+# years = house_schedules["YEAR"].unique()
+# for year in years:
+#     h_yr = house_schedules[house_schedules["YEAR"] == year]
+#     weeks = h_yr["WEEK"].unique()
 
+vendor_load = pd.DataFrame()
 
-# house_schedules = h_schedules.dropna(
-#     subset=[
-#         "VENDORNUMBER"])
+for idx, row in house_schedules.iterrows():
+    vendor = row["VENDORNUMBER"]
+    start = row["ACTUALSTARTDATE"]
+    plus = start + datetime.timedelta(days=7)
+    minus = start - datetime.timedelta(days=7)
+    count = 0 | house_schedules[(house_schedules["VENDORNUMBER"] == vendor) & (
+        house_schedules["ACTUALSTARTDATE"] >= minus) & (house_schedules["ACTUALSTARTDATE"] <= plus)]["VENDORNUMBER"].count()
+
+    vendor_load = vendor_load.append({
+        "TWO_WEEK_LOAD": count
+    }, ignore_index=True)
+
+print(vendor_load)
+house_schedules = house_schedules.join(vendor_load)
+# if idx < 25:
+#     print(plus, minus)
+#     print(count["VENDORNUMBER"].value_counts())
+#   count = schedule_df[]
 
 developments = house_schedules["DEVELOPMENTCODE"].unique()
 houses = house_schedules["HOUSENUMBER"].unique()
