@@ -19,29 +19,29 @@ zipcode_df = pd.DataFrame(columns=["ZIP", "CITY", "COUNTY", "POPULATION", "POPUL
                                    "HOUSING_UNITS", "OCCUPIED_HOUSING_UNITS", "MEDIAN_HOME_VALUE", "MEDIAN_HOUSEHOLD_INCOME"])
 
 
-zipcode_data = zip_codes["ZIP"].unique()
+def generate_zip_data():
+    global zip_codes
+    global zipcode_df
+    print("Running ZIP CODE DATA")
 
-for zipcode in zipcode_data:
-    zi = search.by_zipcode(zipcode)
-    zip_data = {
-        "ZIP": zipcode, "CITY": zi.major_city,
-        "COUNTY": zi.county, "POPULATION": zi.population,
-        "POPULATION_DENSITY": zi.population_density,
-        "HOUSING_UNITS": zi.housing_units, "OCCUPIED_HOUSING_UNITS": zi.occupied_housing_units,
-        "MEDIAN_HOME_VALUE": zi.median_home_value, "MEDIAN_HOUSEHOLD_INCOME": zi.median_household_income
-    }
-    # print(zip_data)
-    zipcode_df = zipcode_df.append(zip_data, ignore_index=True)
+    zipcode_data = zip_codes["ZIP"].unique()
 
-# print(zipcode_df)
+    for zipcode in zipcode_data:
+        zi = search.by_zipcode(zipcode)
+        zip_data = {
+            "ZIP": zipcode, "CITY": zi.major_city,
+            "COUNTY": zi.county, "POPULATION": zi.population,
+            "POPULATION_DENSITY": zi.population_density,
+            "HOUSING_UNITS": zi.housing_units, "OCCUPIED_HOUSING_UNITS": zi.occupied_housing_units,
+            "MEDIAN_HOME_VALUE": zi.median_home_value, "MEDIAN_HOUSEHOLD_INCOME": zi.median_household_income
+        }
+        # print(zip_data)
+        zipcode_df = zipcode_df.append(zip_data, ignore_index=True)
 
-zip_codes = zip_codes.join(zipcode_df.set_index('ZIP'), on="ZIP")
+    # print(zipcode_df)
 
-# new_columns = pd.DataFrame(columns=['ACTUAL_DURATION', 'ACTIVITYNAME'])
-
-# print(house_schedules)
-# print(vendor_master)
-# print(activity_codes)
+    zip_codes = zip_codes.join(zipcode_df.set_index('ZIP'), on="ZIP")
+    print("Finished ZIP CODE DATA")
 
 
 house_schedules = h_schedules.dropna(
@@ -51,110 +51,120 @@ house_schedules = h_schedules.dropna(
 # print(house_schedules)
 house_schedules = house_schedules.reset_index(drop=True)
 
-homes = house_schedules["HOUSENUMBER"].unique()
-# print(house_schedules[house_schedules["ACTIVITYCODE"] == "P57"])
-
-
-houses_df = pd.DataFrame(
-    columns=["HOUSENUMBER", "CONSTRUCTIONTIME", "LOANTIME"])
 
 # print(house_schedules)
+def generate_houses_df():
+    print("Running Generate House Schedules")
+    homes = house_schedules["HOUSENUMBER"].unique()
 
-for house in homes:
-    is_house = house_schedules["HOUSENUMBER"] == house
-    current_house = house_schedules[is_house]
-    start = current_house[current_house["ACTIVITYCODE"] == "A00"]
-    end = current_house[current_house["ACTIVITYCODE"] == "P57"]
-    co = current_house[current_house["ACTIVITYCODE"] == "P30"]
-
-    if start.empty:
-        # print("A00 Missing")
+    houses_df = pd.DataFrame(
+        columns=["HOUSENUMBER", "CONSTRUCTIONTIME", "LOANTIME"])
+    for house in homes:
+        is_house = house_schedules["HOUSENUMBER"] == house
+        current_house = house_schedules[is_house]
         start = current_house[current_house["ACTIVITYCODE"] == "C05"]
-        # pass
+        end = current_house[current_house["ACTIVITYCODE"] == "P57"]
+        co = current_house[current_house["ACTIVITYCODE"] == "P30"]
 
-    if co.empty:
-        # print("END SKIP")
-        pass
-    else:
-        end_date = None
-        loan_time = None
-        start_date = start["EARLYSTARTDATE"].values.astype('datetime64[D]')[
-            0]
-        if not end.empty:
-            end_date = end["ACTUALFINISHDATE"].values.astype('datetime64[D]')[
+        if start.empty:
+            print("C05 Missing")
+            start = current_house[current_house["ACTIVITYCODE"] == "A00"]
+            # pass
+
+        if co.empty:
+            # print("END SKIP")
+            pass
+        else:
+            end_date = None
+            loan_time = None
+            start_date = start["EARLYSTARTDATE"].values.astype('datetime64[D]')[
                 0]
-            loan_time = end_date - start_date
-            loan_time = loan_time / np.timedelta64(1, 'D')
-        const_end_date = co["ACTUALFINISHDATE"].values.astype('datetime64[D]')[
-            0]
-        # print(start_date, end_date)
+            if not end.empty:
+                end_date = end["ACTUALFINISHDATE"].values.astype('datetime64[D]')[
+                    0]
+                loan_time = end_date - start_date
+                loan_time = loan_time / np.timedelta64(1, 'D')
+            const_end_date = co["ACTUALFINISHDATE"].values.astype('datetime64[D]')[
+                0]
+            # print(start_date, end_date)
 
-        build_time = const_end_date - start_date
-        build_time = build_time / np.timedelta64(1, 'D')
+            build_time = const_end_date - start_date
+            build_time = build_time / np.timedelta64(1, 'D')
 
-        # print(build_time, loan_time)
+            # print(build_time, loan_time)
 
-        house_data = {
-            "HOUSENUMBER": house,
-            "CONSTRUCTIONTIME": build_time,
-            "LOANTIME": loan_time,
-            "YEAR": pd.to_datetime(start_date).year
-        }
-        # print(house_data)
+            house_data = {
+                "HOUSENUMBER": house,
+                "CONSTRUCTIONTIME": build_time,
+                "LOANTIME": loan_time,
+                "YEAR": pd.to_datetime(start_date).year
+            }
+            # print(house_data)
 
-        houses_df = houses_df.append(house_data, ignore_index=True)
+            houses_df = houses_df.append(house_data, ignore_index=True)
 
-houses_df = houses_df.dropna(
-    subset=[
-        # "VENDORNUMBER",
-        "CONSTRUCTIONTIME", "YEAR"])
+    houses_df = houses_df.dropna(
+        subset=[
+            # "VENDORNUMBER",
+            "CONSTRUCTIONTIME", "YEAR"])
 
-houses_df = houses_df.join(
-    start_matrix.set_index('Job #'), on="HOUSENUMBER")
-houses_df = houses_df.join(zip_codes.set_index('DEVELOPMENT'), on="DEV")
-houses_df.to_csv('./files/compiled_houses.csv', index=False)
-
-
-vendor_load = pd.DataFrame()
-
-for idx, row in house_schedules.iterrows():
-    vendor = row["VENDORNUMBER"]
-    start = row["ACTUALSTARTDATE"]
-    plus = start + datetime.timedelta(days=7)
-    minus = start - datetime.timedelta(days=7)
-    count = 0 | house_schedules[(house_schedules["VENDORNUMBER"] == vendor) & (
-        house_schedules["ACTUALSTARTDATE"] >= minus) & (house_schedules["ACTUALSTARTDATE"] <= plus)]["VENDORNUMBER"].count()
-
-    vendor_load = vendor_load.append({
-        "TWO_WEEK_LOAD": count
-    }, ignore_index=True)
-
-print(vendor_load)
-house_schedules = house_schedules.join(vendor_load)
-
-developments = house_schedules["DEVELOPMENTCODE"].unique()
-houses = house_schedules["HOUSENUMBER"].unique()
-activities = house_schedules["ACTIVITYCODE"].unique()
-vendors = house_schedules["VENDORNUMBER"].unique()
-total_rows = house_schedules.count()[0]
+    houses_df = houses_df.join(
+        start_matrix.set_index('Job #'), on="HOUSENUMBER")
+    houses_df = houses_df.join(zip_codes.set_index('DEVELOPMENT'), on="DEV")
+    houses_df.to_csv('./files/compiled_houses.csv', index=False)
+    print("Finished Generate House Schedules")
 
 
-hs = house_schedules.join(vendor_master.set_index('NUMBER'), on="VENDORNUMBER")
+def calc_vendor_load():
+    global house_schedules
+    vendor_load = pd.DataFrame()
 
-hs = hs.join(activity_codes.set_index('ACTIVITYCODE'), on="ACTIVITYCODE")
-hs = hs.join(zip_codes.set_index('DEVELOPMENT'), on="DEVELOPMENTCODE")
+    for idx, row in house_schedules.iterrows():
+        vendor = row["VENDORNUMBER"]
+        start = row["ACTUALSTARTDATE"]
+        plus = start + datetime.timedelta(days=7)
+        minus = start - datetime.timedelta(days=7)
+        count = 0 | house_schedules[(house_schedules["VENDORNUMBER"] == vendor) & (
+            house_schedules["ACTUALSTARTDATE"] >= minus) & (house_schedules["ACTUALSTARTDATE"] <= plus)]["VENDORNUMBER"].count()
 
-hs["BUSINESS_DURATION"] = np.busday_count(
-    hs["ACTUALSTARTDATE"].values.astype('datetime64[D]'), hs["ACTUALFINISHDATE"].values.astype('datetime64[D]'))
-hs["BUSINESS_DURATION"] = hs["BUSINESS_DURATION"] + 1
-hs["ACTUAL_DURATION"] = hs["ACTUALFINISHDATE"] - hs["ACTUALSTARTDATE"]
-hs["ACTUAL_DURATION"] = hs["ACTUAL_DURATION"] / np.timedelta64(1, 'D')
-hs["ACTUAL_DURATION"] = hs["ACTUAL_DURATION"] + 1
+        vendor_load = vendor_load.append({
+            "TWO_WEEK_LOAD": count
+        }, ignore_index=True)
 
-hs = hs.drop([
-    'Unnamed: 33',
-    'Unnamed: 4',
-], axis=1)
-print(list(hs.columns.values))
+    print(vendor_load)
+    house_schedules = house_schedules.join(vendor_load)
 
-hs.to_csv('./files/compiled_schedules.csv', index=False)
+# developments = house_schedules["DEVELOPMENTCODE"].unique()
+# houses = house_schedules["HOUSENUMBER"].unique()
+# activities = house_schedules["ACTIVITYCODE"].unique()
+# vendors = house_schedules["VENDORNUMBER"].unique()
+# total_rows = house_schedules.count()[0]
+
+
+def generate_house_schedules():
+    hs = house_schedules.join(
+        vendor_master.set_index('NUMBER'), on="VENDORNUMBER")
+
+    hs = hs.join(activity_codes.set_index('ACTIVITYCODE'), on="ACTIVITYCODE")
+    hs = hs.join(zip_codes.set_index('DEVELOPMENT'), on="DEVELOPMENTCODE")
+
+    hs["BUSINESS_DURATION"] = np.busday_count(
+        hs["ACTUALSTARTDATE"].values.astype('datetime64[D]'), hs["ACTUALFINISHDATE"].values.astype('datetime64[D]'))
+    hs["BUSINESS_DURATION"] = hs["BUSINESS_DURATION"] + 1
+    hs["ACTUAL_DURATION"] = hs["ACTUALFINISHDATE"] - hs["ACTUALSTARTDATE"]
+    hs["ACTUAL_DURATION"] = hs["ACTUAL_DURATION"] / np.timedelta64(1, 'D')
+    hs["ACTUAL_DURATION"] = hs["ACTUAL_DURATION"] + 1
+    hs = hs.drop([
+        'Unnamed: 33',
+        'Unnamed: 4',
+    ], axis=1)
+    print(list(hs.columns.values))
+
+    hs.to_csv('./files/compiled_schedules.csv', index=False)
+
+
+if __name__ == "__main__":
+    generate_zip_data()
+    generate_houses_df()
+    # calc_vendor_load()
+    # generate_house_schedules()
