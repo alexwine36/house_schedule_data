@@ -167,4 +167,4 @@ if __name__ == "__main__":
     generate_zip_data()
     generate_houses_df()
     # calc_vendor_load()
-    # generate_house_schedules()
+    generate_house_schedules()
