@@ -1,158 +1,158 @@
-ACTIVITYCODE,DESCRIPTION,CATEGORY,INSPECTION,CALLED_BY_VENDOR
-A00,Const Staging Period,General,FALSE,FALSE
-A01,Pad Offsets,Survey,FALSE,FALSE
-A03,Pad Reprocess,Dirt Work,FALSE,FALSE
-A04,Pad Construction,Dirt Work,FALSE,FALSE
-A05,Order Plot Plan,Survey,FALSE,FALSE
-A10,Order Water Meter,,FALSE,FALSE
-A15,Order Yardlines,Electrical,FALSE,FALSE
-C00,STAGE RELEASE - ACE,,FALSE,FALSE
-C02,Set Temp Pole,Electrical,FALSE,FALSE
-C05,Pins,Survey,FALSE,FALSE
-C10,Dig and Band,Survey,FALSE,FALSE
-C15,Plumbing Rough,Plumbing,FALSE,FALSE
-C20,Plumbing Inspection,Plumbing,TRUE,TRUE
-C25,Backfill,Plumbing,FALSE,FALSE
-C28,Septic Tank Inspection,,TRUE,FALSE
-C30,Slab Prep,Concrete,FALSE,FALSE
-C32,Foundation Cert,Survey,FALSE,FALSE
-C35,Slab Inspection,Concrete,TRUE,FALSE
-C40,Wrap and Check,Plumbing,FALSE,FALSE
-C45,Underground Electrical,Electrical,FALSE,FALSE
-C50,Pour,Concrete,FALSE,FALSE
-C55,Strip Forms,Concrete,FALSE,FALSE
-C60,Rough Grade,Dirt Work,FALSE,FALSE
-E00,STAGE RELEASE - G,General,FALSE,FALSE
-E05,Lumber 1st Floor,Framing Materials,FALSE,FALSE
-E10,Frame Labor - Small 1St,Frame Labor,FALSE,FALSE
-E11,Frame Labor - Big 1St,Frame Labor,FALSE,FALSE
-E12,Frame Labor - Small 2St,Frame Labor,FALSE,FALSE
-E13,Frame Labor - Big 2St,Frame Labor,FALSE,FALSE
-E15,Floor Truss Drop,Framing Materials,FALSE,FALSE
-E20,2nd Drop - Sheet/Decking,Framing Materials,FALSE,FALSE
-E25,Lumber 2nd Floor,Framing Materials,FALSE,FALSE
-E30,Roof Truss Drop,Truss,FALSE,FALSE
-E33,Lumber Cornice/Soffit,Framing Materials,FALSE,FALSE
-E35,Lumber Roof Decking,Framing Materials,FALSE,FALSE
-G03,Lumber Punch,Frame Labor,FALSE,FALSE
-G04,Dry-In at Deck,Roofing,FALSE,FALSE
-G06,Exterior Door Delivery,Door Materials,FALSE,FALSE
-G09,Exterior Door Install,Trim Labor,FALSE,FALSE
-G12,Window Drop,Windows,FALSE,FALSE
-G15,Window Install,Windows,FALSE,FALSE
-G17,SGD Drop,Windows,FALSE,FALSE
-G18,SGD Install,Windows,FALSE,FALSE
-G21,Garage Door Install,Garage,FALSE,FALSE
-G22,Block - Footers/BC,Block,FALSE,FALSE
-G23,Trash Haul - Frame,Clean,FALSE,FALSE
-G24,HVAC Rough,HVAC,FALSE,FALSE
-G27,HVAC Rough Inspection,HVAC,TRUE,FALSE
-G28,Fireplace Install,Fireplace,FALSE,FALSE
-G30,Cabinet Measure,Cabinet Labor,FALSE,FALSE
-G31,Floor Markup,Concrete,FALSE,FALSE
-G33,Plumbing T/O,Plumbing,FALSE,FALSE
-G34,Floor Grinding,Concrete,FALSE,FALSE
-G36,Plumbing T/O Inspection,Plumbing,TRUE,TRUE
-G39,Electric Rough,Electrical,FALSE,FALSE
-G42,Electric Rough Inspection,Electrical,TRUE,TRUE
-G45,Low Voltage Rough,Electrical,FALSE,FALSE
-G48,Low Voltage Rough Inspection,Electrical,TRUE,TRUE
-G49,Spindle Rough In,Stairs,FALSE,FALSE
-G50,Interior Door Walk,Trim Materials,FALSE,FALSE
-G51,Shear Inspection,Frame Labor,TRUE,FALSE
-G52,ZIP Tape Install,Frame Labor,FALSE,FALSE
-G54,Roof Dry In or Shingles,Roofing,FALSE,FALSE
-G55,Roofing - TPO,Roofing,FALSE,FALSE
-G57,Request Yardlines,Ext. Electrical,FALSE,FALSE
-G60,Taexx Install,Pest,FALSE,FALSE
-G63,Lath,Stucco,FALSE,FALSE
-G65,Foam Pack,Insulation,FALSE,FALSE
-G66,Duct Blast,HVAC,FALSE,FALSE
-G69,Frame Walk,General,FALSE,FALSE
-G72,Frame Inspection,Frame Labor,TRUE,FALSE
-G75,Insulate - Walls,Insulation,FALSE,FALSE
-G78,Insulation Inspection,Insulation,TRUE,FALSE
-K00,STAGE RELEASE - JKMP,General,FALSE,FALSE
-K05,Drop Rock,Drywall Materials,FALSE,FALSE
-K10,Dry Wall Hang,Drywall Labor,FALSE,FALSE
-K12,Temp Heat Install,HVAC,FALSE,FALSE
-K15,Wallboard Inspection,Drywall Labor,TRUE,FALSE
-K20,Stock Roof Tile,Roofing,FALSE,FALSE
-K25,Dry Wall Texture,Drywall Labor,FALSE,FALSE
-K30,Dry Wall Bump and Clean,Drywall Labor,FALSE,FALSE
-K35,Brown Coat,Stucco,FALSE,FALSE
-K40,Door/Trim Drop,Door Materials,FALSE,FALSE
-K45,Wood Shelving Drop,Trim Materials,FALSE,FALSE
-K50,Blind Measure,Blinds Materials,FALSE,FALSE
-M03,Wood Shelving Install,Trim Labor,FALSE,FALSE
-M06,First Trim,Trim Labor,FALSE,FALSE
-M09,Interior Paint,Paint Labor,FALSE,FALSE
-M10,Spindles - Final,Stairs,FALSE,FALSE
-M12,Yardlines Installed,Ext. Electrical,FALSE,FALSE
-M13,Mudpan Install,Tile,FALSE,FALSE
-M15,Cabinet Drop,Cabinet Materials,FALSE,FALSE
-M18,Cabinet Install,Cabinet Labor,FALSE,FALSE
-M19,Cabinet QCC,Cabinet Labor,FALSE,FALSE
-M20,Insulate - Blow Attic,Insulation,FALSE,FALSE
-M21,Color Coat,Stucco,FALSE,FALSE
-M22,Exterior Stone Install,Concrete,FALSE,FALSE
-M23,Curb Cut,Concrete,FALSE,FALSE
-M24,Prep Flat Work,Concrete,FALSE,FALSE
-M25,Landscape Conduit,Landscape,FALSE,FALSE
-M27,Flat Work Inspection,Concrete,TRUE,TRUE
-M30,Pour Flatwork,Concrete,FALSE,FALSE
-M33,Solid Surface Template,Solid Surface,FALSE,FALSE
-M36,Laminate Measure,Solid Surface,FALSE,FALSE
-M37,Marble Measure,Solid Surface,FALSE,FALSE
-M39,HVAC Final,HVAC,FALSE,FALSE
-M42,Floor and Wall Tile,Tile,FALSE,FALSE
-M44,Tile Backsplash Install,Tile,FALSE,FALSE
-M45,Roofing Install,Roofing,FALSE,FALSE
-M46,Skylight Install,Roofing,FALSE,FALSE
-M47,Tile Roof Clean,Roofing,FALSE,FALSE
-M48,Block - Sides/Returns,Block,FALSE,FALSE
-M49,Deck Paver Install,Concrete,FALSE,FALSE
-M50,Block - Sides/Returns,Block,FALSE,FALSE
-M51,Final Grade,Dirt Work,FALSE,FALSE
-M54,Landscaping,Landscape,FALSE,FALSE
-M57,Light Package Drop,Lighting,FALSE,FALSE
-M60,Electrical Final,Electrical,FALSE,FALSE
-M63,Electrical Inspection,Electrical,TRUE,TRUE
-M66,Solid Surface Install,Solid Surface,FALSE,FALSE
-M69,Laminate Top Install,Solid Surface,FALSE,FALSE
-M70,Cultured Marble Install,Solid Surface,FALSE,FALSE
-M72,Plumbing Final,Plumbing,FALSE,FALSE
-M75,Plumbing Inspection,Plumbing,TRUE,TRUE
-M78,Merc Inspection,Gas,TRUE,TRUE
-M81,Mirror Install,Bath Hardware,FALSE,FALSE
-M82,Bath Hardware Install,Bath Hardware,FALSE,FALSE
-M83,Shower Door Install,Bath Hardware,FALSE,FALSE
-M84,Carpet Installation,Carpet,FALSE,FALSE
-M87,HVAC Inspection,HVAC,TRUE,TRUE
-P03,Gate and Accent Delivery,Ext. Hardware,FALSE,FALSE
-P06,Rough Clean,Clean,FALSE,FALSE
-P09,Blinds,Blinds Materials,FALSE,FALSE
-P12,Final Trim,Trim Labor,FALSE,FALSE
-P13,Door Hardware Drop,Int. Hardware,FALSE,FALSE
-P15,Accent and Add # Install,Ext. Hardware,FALSE,FALSE
-P18,Gas Meter,Gas,FALSE,FALSE
-P21,Drywall Punch,Drywall Labor,FALSE,FALSE
-P24,Final Paint,Paint Labor,FALSE,FALSE
-P25,Garage Cleanout,Clean,FALSE,FALSE
-P27,HERS Rating,HVAC,TRUE,TRUE
-P29,Garage Opener Install,Garage,FALSE,FALSE
-P30,Certificate Occupancy,General,TRUE,FALSE
-P33,HVAC QCC,HVAC,FALSE,FALSE
-P35,Fireplace Final,Fireplace,FALSE,FALSE
-P36,Plumbing QCC,Plumbing,FALSE,FALSE
-P39,Appliances - Kitchen,Appliances,FALSE,FALSE
-P40,Appliances - Fridge,Appliances,FALSE,FALSE
-P41,Appliances - Laundry,Appliances,FALSE,FALSE
-P42,Final Clean,Clean,FALSE,FALSE
-P43,Cabinet Final,Cabinet Labor,FALSE,FALSE
-P45,Screen Install,Windows,FALSE,FALSE
-P48,Final Walk,General,FALSE,FALSE
-P49,Warranty Walk,General,FALSE,FALSE
-P51,Punch List,General,FALSE,FALSE
-P54,Final Sign Off,General,FALSE,FALSE
-P57,Close,General,FALSE,FALSE
+ACTIVITYCODE,DESCRIPTION,CATEGORY,INSPECTION,CALLED_BY_VENDOR,STAGE
+A00,Const Staging Period,General,FALSE,FALSE,0
+A01,Pad Offsets,Survey,FALSE,FALSE,1
+A03,Pad Reprocess,Dirt Work,FALSE,FALSE,1
+A04,Pad Construction,Dirt Work,FALSE,FALSE,1
+A05,Order Plot Plan,Survey,FALSE,FALSE,
+A10,Order Water Meter,,FALSE,FALSE,
+A15,Order Yardlines,Electrical,FALSE,FALSE,
+C00,STAGE RELEASE - ACE,,FALSE,FALSE,
+C02,Set Temp Pole,Electrical,FALSE,FALSE,
+C05,Pins,Survey,FALSE,FALSE,1
+C10,Dig and Band,Survey,FALSE,FALSE,2
+C15,Plumbing Rough,Plumbing,FALSE,FALSE,2
+C20,Plumbing Inspection,Plumbing,TRUE,TRUE,2
+C25,Backfill,Plumbing,FALSE,FALSE,2
+C28,Septic Tank Inspection,,TRUE,FALSE,2
+C30,Slab Prep,Concrete,FALSE,FALSE,3
+C32,Foundation Cert,Survey,FALSE,FALSE,3
+C35,Slab Inspection,Concrete,TRUE,FALSE,3
+C40,Wrap and Check,Plumbing,FALSE,FALSE,4
+C45,Underground Electrical,Electrical,FALSE,FALSE,4
+C50,Pour,Concrete,FALSE,FALSE,4
+C55,Strip Forms,Concrete,FALSE,FALSE,5
+C60,Rough Grade,Dirt Work,FALSE,FALSE,5
+E00,STAGE RELEASE - G,General,FALSE,FALSE,
+E05,Lumber 1st Floor,Framing Materials,FALSE,FALSE,6
+E10,Frame Labor - Small 1St,Frame Labor,FALSE,FALSE,6
+E11,Frame Labor - Big 1St,Frame Labor,FALSE,FALSE,6
+E12,Frame Labor - Small 2St,Frame Labor,FALSE,FALSE,6
+E13,Frame Labor - Big 2St,Frame Labor,FALSE,FALSE,6
+E15,Floor Truss Drop,Framing Materials,FALSE,FALSE,6
+E20,2nd Drop - Sheet/Decking,Framing Materials,FALSE,FALSE,6
+E25,Lumber 2nd Floor,Framing Materials,FALSE,FALSE,6
+E30,Roof Truss Drop,Truss,FALSE,FALSE,6
+E33,Lumber Cornice/Soffit,Framing Materials,FALSE,FALSE,6
+E35,Lumber Roof Decking,Framing Materials,FALSE,FALSE,6
+G03,Lumber Punch,Frame Labor,FALSE,FALSE,6
+G04,Dry-In at Deck,Roofing,FALSE,FALSE,7
+G06,Exterior Door Delivery,Door Materials,FALSE,FALSE,7
+G09,Exterior Door Install,Trim Labor,FALSE,FALSE,7
+G12,Window Drop,Windows,FALSE,FALSE,7
+G15,Window Install,Windows,FALSE,FALSE,7
+G17,SGD Drop,Windows,FALSE,FALSE,7
+G18,SGD Install,Windows,FALSE,FALSE,7
+G21,Garage Door Install,Garage,FALSE,FALSE,7
+G22,Block - Footers/BC,Block,FALSE,FALSE,
+G23,Trash Haul - Frame,Clean,FALSE,FALSE,
+G24,HVAC Rough,HVAC,FALSE,FALSE,8
+G27,HVAC Rough Inspection,HVAC,TRUE,FALSE,8
+G28,Fireplace Install,Fireplace,FALSE,FALSE,
+G30,Cabinet Measure,Cabinet Labor,FALSE,FALSE,
+G31,Floor Markup,Concrete,FALSE,FALSE,
+G33,Plumbing T/O,Plumbing,FALSE,FALSE,9
+G34,Floor Grinding,Concrete,FALSE,FALSE,
+G36,Plumbing T/O Inspection,Plumbing,TRUE,TRUE,9
+G39,Electric Rough,Electrical,FALSE,FALSE,10
+G42,Electric Rough Inspection,Electrical,TRUE,TRUE,10
+G45,Low Voltage Rough,Electrical,FALSE,FALSE,10
+G48,Low Voltage Rough Inspection,Electrical,TRUE,TRUE,10
+G49,Spindle Rough In,Stairs,FALSE,FALSE,
+G50,Interior Door Walk,Trim Materials,FALSE,FALSE,
+G51,Shear Inspection,Frame Labor,TRUE,FALSE,11
+G52,ZIP Tape Install,Frame Labor,FALSE,FALSE,
+G54,Roof Dry In or Shingles,Roofing,FALSE,FALSE,12
+G55,Roofing - TPO,Roofing,FALSE,FALSE,
+G57,Request Yardlines,Ext. Electrical,FALSE,FALSE,
+G60,Taexx Install,Pest,FALSE,FALSE,13
+G63,Lath,Stucco,FALSE,FALSE,
+G65,Foam Pack,Insulation,FALSE,FALSE,13
+G66,Duct Blast,HVAC,FALSE,FALSE,
+G69,Frame Walk,General,FALSE,FALSE,
+G72,Frame Inspection,Frame Labor,TRUE,FALSE,14
+G75,Insulate - Walls,Insulation,FALSE,FALSE,15
+G78,Insulation Inspection,Insulation,TRUE,FALSE,15
+K00,STAGE RELEASE - JKMP,General,FALSE,FALSE,
+K05,Drop Rock,Drywall Materials,FALSE,FALSE,16
+K10,Dry Wall Hang,Drywall Labor,FALSE,FALSE,16
+K12,Temp Heat Install,HVAC,FALSE,FALSE,
+K15,Wallboard Inspection,Drywall Labor,TRUE,FALSE,16
+K20,Stock Roof Tile,Roofing,FALSE,FALSE,
+K25,Dry Wall Texture,Drywall Labor,FALSE,FALSE,17
+K30,Dry Wall Bump and Clean,Drywall Labor,FALSE,FALSE,17
+K35,Brown Coat,Stucco,FALSE,FALSE,
+K40,Door/Trim Drop,Door Materials,FALSE,FALSE,
+K45,Wood Shelving Drop,Trim Materials,FALSE,FALSE,
+K50,Blind Measure,Blinds Materials,FALSE,FALSE,
+M03,Wood Shelving Install,Trim Labor,FALSE,FALSE,
+M06,First Trim,Trim Labor,FALSE,FALSE,
+M09,Interior Paint,Paint Labor,FALSE,FALSE,
+M10,Spindles - Final,Stairs,FALSE,FALSE,
+M12,Yardlines Installed,Ext. Electrical,FALSE,FALSE,
+M13,Mudpan Install,Tile,FALSE,FALSE,
+M15,Cabinet Drop,Cabinet Materials,FALSE,FALSE,
+M18,Cabinet Install,Cabinet Labor,FALSE,FALSE,
+M19,Cabinet QCC,Cabinet Labor,FALSE,FALSE,
+M20,Insulate - Blow Attic,Insulation,FALSE,FALSE,
+M21,Color Coat,Stucco,FALSE,FALSE,
+M22,Exterior Stone Install,Concrete,FALSE,FALSE,
+M23,Curb Cut,Concrete,FALSE,FALSE,
+M24,Prep Flat Work,Concrete,FALSE,FALSE,
+M25,Landscape Conduit,Landscape,FALSE,FALSE,
+M27,Flat Work Inspection,Concrete,TRUE,TRUE,
+M30,Pour Flatwork,Concrete,FALSE,FALSE,
+M33,Solid Surface Template,Solid Surface,FALSE,FALSE,
+M36,Laminate Measure,Solid Surface,FALSE,FALSE,
+M37,Marble Measure,Solid Surface,FALSE,FALSE,
+M39,HVAC Final,HVAC,FALSE,FALSE,
+M42,Floor and Wall Tile,Tile,FALSE,FALSE,
+M44,Tile Backsplash Install,Tile,FALSE,FALSE,
+M45,Roofing Install,Roofing,FALSE,FALSE,
+M46,Skylight Install,Roofing,FALSE,FALSE,
+M47,Tile Roof Clean,Roofing,FALSE,FALSE,
+M48,Block - Sides/Returns,Block,FALSE,FALSE,
+M49,Deck Paver Install,Concrete,FALSE,FALSE,
+M50,Block - Sides/Returns,Block,FALSE,FALSE,
+M51,Final Grade,Dirt Work,FALSE,FALSE,
+M54,Landscaping,Landscape,FALSE,FALSE,
+M57,Light Package Drop,Lighting,FALSE,FALSE,
+M60,Electrical Final,Electrical,FALSE,FALSE,
+M63,Electrical Inspection,Electrical,TRUE,TRUE,
+M66,Solid Surface Install,Solid Surface,FALSE,FALSE,
+M69,Laminate Top Install,Solid Surface,FALSE,FALSE,
+M70,Cultured Marble Install,Solid Surface,FALSE,FALSE,
+M72,Plumbing Final,Plumbing,FALSE,FALSE,
+M75,Plumbing Inspection,Plumbing,TRUE,TRUE,
+M78,Merc Inspection,Gas,TRUE,TRUE,
+M81,Mirror Install,Bath Hardware,FALSE,FALSE,
+M82,Bath Hardware Install,Bath Hardware,FALSE,FALSE,
+M83,Shower Door Install,Bath Hardware,FALSE,FALSE,
+M84,Carpet Installation,Carpet,FALSE,FALSE,
+M87,HVAC Inspection,HVAC,TRUE,TRUE,
+P03,Gate and Accent Delivery,Ext. Hardware,FALSE,FALSE,
+P06,Rough Clean,Clean,FALSE,FALSE,
+P09,Blinds,Blinds Materials,FALSE,FALSE,
+P12,Final Trim,Trim Labor,FALSE,FALSE,
+P13,Door Hardware Drop,Int. Hardware,FALSE,FALSE,
+P15,Accent and Add # Install,Ext. Hardware,FALSE,FALSE,
+P18,Gas Meter,Gas,FALSE,FALSE,
+P21,Drywall Punch,Drywall Labor,FALSE,FALSE,
+P24,Final Paint,Paint Labor,FALSE,FALSE,
+P25,Garage Cleanout,Clean,FALSE,FALSE,
+P27,HERS Rating,HVAC,TRUE,TRUE,
+P29,Garage Opener Install,Garage,FALSE,FALSE,
+P30,Certificate Occupancy,General,TRUE,FALSE,
+P33,HVAC QCC,HVAC,FALSE,FALSE,
+P35,Fireplace Final,Fireplace,FALSE,FALSE,
+P36,Plumbing QCC,Plumbing,FALSE,FALSE,
+P39,Appliances - Kitchen,Appliances,FALSE,FALSE,
+P40,Appliances - Fridge,Appliances,FALSE,FALSE,
+P41,Appliances - Laundry,Appliances,FALSE,FALSE,
+P42,Final Clean,Clean,FALSE,FALSE,
+P43,Cabinet Final,Cabinet Labor,FALSE,FALSE,
+P45,Screen Install,Windows,FALSE,FALSE,
+P48,Final Walk,General,FALSE,FALSE,
+P49,Warranty Walk,General,FALSE,FALSE,
+P51,Punch List,General,FALSE,FALSE,
+P54,Final Sign Off,General,FALSE,FALSE,
+P57,Close,General,FALSE,FALSE,
