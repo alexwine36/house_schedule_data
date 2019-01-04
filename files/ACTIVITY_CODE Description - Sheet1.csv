@@ -35,7 +35,7 @@ E30,Roof Truss Drop,Truss,FALSE,FALSE,6
 E33,Lumber Cornice/Soffit,Framing Materials,FALSE,FALSE,6
 E35,Lumber Roof Decking,Framing Materials,FALSE,FALSE,6
 G03,Lumber Punch,Frame Labor,FALSE,FALSE,6
-G04,Dry-In at Deck,Roofing,FALSE,FALSE,7
+G04,Dry-In at Deck,Roofing,FALSE,FALSE,12
 G06,Exterior Door Delivery,Door Materials,FALSE,FALSE,7
 G09,Exterior Door Install,Trim Labor,FALSE,FALSE,7
 G12,Window Drop,Windows,FALSE,FALSE,7
