@@ -13,7 +13,7 @@ C10,Dig and Band,Survey,FALSE,FALSE,2
 C15,Plumbing Rough,Plumbing,FALSE,FALSE,2
 C20,Plumbing Inspection,Plumbing,TRUE,TRUE,2
 C25,Backfill,Plumbing,FALSE,FALSE,2
-C28,Septic Tank Inspection,,TRUE,FALSE,2
+C28,Septic Tank Inspection,,TRUE,FALSE,
 C30,Slab Prep,Concrete,FALSE,FALSE,3
 C32,Foundation Cert,Survey,FALSE,FALSE,3
 C35,Slab Inspection,Concrete,TRUE,FALSE,3
